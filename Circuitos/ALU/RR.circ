@@ -25,12 +25,12 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
   <lib desc="#Base" name="6">
     <tool name="Text Tool">
       <a name="text" val=""/>
-      <a name="font" val="Courier New bold 20"/>
+      <a name="font" val="SansSerif plain 12"/>
       <a name="halign" val="center"/>
       <a name="valign" val="base"/>
     </tool>
   </lib>
-  <main name="sr"/>
+  <main name="rr"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
     <a name="simlimit" val="1000"/>
@@ -46,7 +46,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <tool lib="6" name="Edit Tool"/>
     <tool lib="6" name="Text Tool">
       <a name="text" val=""/>
-      <a name="font" val="Courier New bold 20"/>
+      <a name="font" val="SansSerif plain 12"/>
       <a name="halign" val="center"/>
       <a name="valign" val="base"/>
     </tool>
@@ -63,16 +63,16 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <tool lib="1" name="AND Gate"/>
     <tool lib="1" name="OR Gate"/>
   </toolbar>
-  <circuit name="sr">
-    <a name="circuit" val="sr"/>
+  <circuit name="rr">
+    <a name="circuit" val="rr"/>
     <a name="clabel" val=""/>
-    <a name="clabelup" val="east"/>
+    <a name="clabelup" val="north"/>
     <a name="clabelfont" val="Courier New bold 12"/>
     <appear>
       <path d="M61,51 Q65,61 69,51" fill="none" stroke="#808080" stroke-width="2"/>
       <rect fill="#00ff30" height="30" stroke="#ff3000" stroke-width="2" width="30" x="50" y="50"/>
-      <text fill="#ff3000" font-family="Courier New" font-size="12" font-weight="bold" text-anchor="middle" x="64" y="69">SR</text>
-      <circ-port height="10" pin="180,100" width="10" x="75" y="55"/>
+      <text fill="#ff3000" font-family="Courier New" font-size="12" font-weight="bold" text-anchor="middle" x="61" y="70"> RR</text>
+      <circ-port height="10" pin="180,110" width="10" x="75" y="55"/>
       <circ-port height="8" pin="100,70" width="8" x="46" y="66"/>
       <circ-port height="10" pin="330,70" width="10" x="75" y="65"/>
       <circ-anchor facing="east" height="6" width="6" x="77" y="57"/>
@@ -107,11 +107,12 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(140,100)" to="(140,140)"/>
     <wire from="(380,100)" to="(380,140)"/>
     <wire from="(70,100)" to="(70,210)"/>
+    <wire from="(170,110)" to="(180,110)"/>
     <wire from="(360,100)" to="(360,160)"/>
     <wire from="(120,100)" to="(120,160)"/>
     <wire from="(50,100)" to="(50,230)"/>
     <wire from="(290,100)" to="(290,230)"/>
-    <wire from="(250,100)" to="(250,110)"/>
+    <wire from="(170,100)" to="(170,110)"/>
     <wire from="(100,70)" to="(100,80)"/>
     <wire from="(100,100)" to="(100,180)"/>
     <wire from="(270,100)" to="(270,250)"/>
@@ -122,19 +123,20 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(320,100)" to="(320,200)"/>
     <wire from="(80,100)" to="(80,200)"/>
     <wire from="(130,100)" to="(130,150)"/>
-    <wire from="(170,100)" to="(180,100)"/>
-    <wire from="(240,110)" to="(250,110)"/>
+    <wire from="(170,100)" to="(250,100)"/>
     <wire from="(370,100)" to="(370,150)"/>
     <wire from="(60,100)" to="(60,220)"/>
     <wire from="(300,100)" to="(300,220)"/>
-    <comp lib="0" loc="(240,110)" name="Constant">
-      <a name="value" val="0x0"/>
-    </comp>
-    <comp lib="0" loc="(330,80)" name="Splitter">
+    <comp lib="0" loc="(100,80)" name="Splitter">
       <a name="facing" val="south"/>
       <a name="fanout" val="16"/>
       <a name="incoming" val="16"/>
       <a name="appear" val="center"/>
+    </comp>
+    <comp lib="0" loc="(180,110)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="labelloc" val="east"/>
     </comp>
     <comp lib="0" loc="(100,70)" name="Pin">
       <a name="facing" val="south"/>
@@ -142,19 +144,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="tristate" val="false"/>
       <a name="label" val="N1"/>
     </comp>
-    <comp lib="6" loc="(193,21)" name="Text">
-      <a name="text" val="DESPLAZAMIENTO A LA DERECHA"/>
-      <a name="font" val="Courier New bold 20"/>
-    </comp>
-    <comp lib="0" loc="(180,100)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="6" loc="(206,88)" name="Text">
-      <a name="text" val="Overflow"/>
-    </comp>
-    <comp lib="0" loc="(100,80)" name="Splitter">
+    <comp lib="0" loc="(330,80)" name="Splitter">
       <a name="facing" val="south"/>
       <a name="fanout" val="16"/>
       <a name="incoming" val="16"/>
@@ -167,6 +157,13 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="tristate" val="false"/>
       <a name="label" val="Result"/>
       <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="6" loc="(218,18)" name="Text">
+      <a name="text" val="ROTACION A  LA DERECHA"/>
+      <a name="font" val="Courier New bold 12"/>
+    </comp>
+    <comp lib="6" loc="(206,88)" name="Text">
+      <a name="text" val="Overflow"/>
     </comp>
   </circuit>
 </project>
